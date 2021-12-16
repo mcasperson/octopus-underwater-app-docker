@@ -18,7 +18,7 @@ node {
 
     stage('Push image') {
         /* Referencing the AWS registry. Tagging with the Jenkins build number and the latest tag */
-        docker.withRegistry('720766170633.dkr.ecr.us-east-2.amazonaws.com/octopus-underwater-app', 'AWS') {
+        docker.withRegistry('720766170633.dkr.ecr.us-east-2.amazonaws.com/octopus-underwater-app', 'ecr:us-east-2:AWS') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
